@@ -16,11 +16,11 @@ export async function getServerSideProps({params, req, res}) {
   const response = await fetch(`${process.env.API_URL}/api/notes/${params.id}`)
 
   // so much power!
-  if (!response.ok) {
-    res.writeHead(302, { Location: '/notes' })
-    res.end()
-    return {props: {}}
-  }
+  // if (!response.ok) {
+  //   res.writeHead(302, { Location: '/notes' })
+  //   res.end()
+  //   return {props: {}}
+  // }
 
   const {data} = await response.json()
 
